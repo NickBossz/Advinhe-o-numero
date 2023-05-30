@@ -3,26 +3,29 @@ from random import randint
 Facil = {
     "De": 1,
     "Ate": 15,
-    "Chances": 5
+    "Chances": 5,
+    "Dificuldade": "fácil"
 }
 
 Medio = {
     "De": 1,
     "Ate": 20,
-    "Chances": 3
+    "Chances": 3,
+    "Dificuldade": "médio"
 }
 Dificil = {
     "De": 1,
     "Ate": 25,
-    "Chances": 2
+    "Chances": 2,
+    "Dificuldade": "difícil"
 }
 
-def Iniciar(Chances, De, Ate):
-    print(f"Como você escolheu a dificuldade fácil, você terá {Chances} chances e o número será de {De} até {Ate}!")
+def Iniciar(Chances, De, Ate, Dificuldade):
+    print(f"Como você escolheu a dificuldade {Dificuldade}, você terá {Chances} chances e o número será de {De} até {Ate}!")
     NumeroEscolhido = randint(De, Ate)
     print("Tente acertar o número apartir de agora!")
     while(True):
-        Tentativa = input("Tente: ")
+        Tentativa = int(input("Tente: "))
 
         if Tentativa == NumeroEscolhido:
             print("Parabéns, você ganhou o jogo!")
@@ -52,4 +55,4 @@ if dificuldade == "f":
 if dificuldade == "m":
     Iniciar(Medio["Chances"], Medio["De"], Medio["Ate"])
 if dificuldade == "d":
-    Iniciar(Dificil["Chances"], Dificil["De"], Dificil["Ate"])
+    Iniciar(Dificil["Chances"], Dificil["De"], Dificil["Ate"], Dificil)
